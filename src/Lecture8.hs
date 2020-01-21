@@ -5,7 +5,7 @@
 
 module Lecture8 where
 
-import Prelude hiding ( and, product, length, foldr, foldl, (.) )
+import Prelude hiding ( and, product, length, foldr, foldl)
 
 --------------------------------------------------------------------------------
 -- folds (continued)
@@ -39,5 +39,6 @@ length'' = foldl (\n x -> n + 1) 0
 -- count
 
 -- count '3' "cs133" => 2
+count needle = length . filter (==needle) 
 
 --------------------------------------------------------------------------------

@@ -21,22 +21,26 @@ test = [ [ 0, 0, 1, 0, 0 ]
 
 -- | Given a row or column @xs@, `sequences` @xs@ calculates the lengths of
 -- uninterrupted sequences of filled cells.
+-- sequences [1,0,1,0,1] => [1,1,1]
 sequences :: [Int] -> [Int]
-sequences xs = undefined
+sequences xs = [length ys | ys <- group xs, head ys == 1]
+
 
 -- | `rows` @rows@ calculates the sequence lengths for the @rows@ of an image.
 rows :: [[Int]] -> [[Int]]
-rows img = undefined
+-- rows img = [sequences row | row <- img]
+rows = map sequences 
 
 -- | `columns` @columns@ calculates the sequence lengths for the @columns@
 -- of an image.
 columns :: [[Int]] -> [[Int]]
-columns img = undefined
+columns = rows . transpose 
 
 -- | `makeBlank` @img@ replaces all cells in @img@ with blank ones (i.e. ones
 -- that have not been guessed yet)
 makeBlank :: [[Int]] -> [[Int]]
-makeBlank img = undefined
+-- makeBlank img = [[(-1) | cell <- row] | row <- img]
+makeBlank = map (map (const (-1))) 
 
 -- | `symbol` @cell@ maps @cell@ to a corresponding character symbol.
 symbol :: Int -> Char
@@ -46,7 +50,7 @@ symbol (-1) = '?'
 
 -- | `showCell` @width cell@ renders @cell@ as a sequence of @width@ characters.
 showCell :: Int -> Int -> String
-showCell w c = undefined
+showCell w c = replicate w (symbol c)
 
 -- | `showRow` @width row@ renders @row@ so that every cell has a width of
 -- @width@.
