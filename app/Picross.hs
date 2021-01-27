@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- Functional Programming (CS141)                                             --
--- Lecture 8: Fun with functions                                              --
+-- Lecture: Higher-order functions (cont.)                                    --
 --------------------------------------------------------------------------------
 
 module Picross where

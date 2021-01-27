@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
 -- Functional Programming (CS141)                                             --
--- Lecture 8: Fun with functions                                              --
+-- Lecture: Higher-order functions (cont.)                                    --
 --------------------------------------------------------------------------------
 
-module Lecture8 where
+module Lecture where
 
 import Prelude hiding ( and, product, length, foldr, foldl, (.) )
 

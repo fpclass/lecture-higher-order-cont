@@ -1,13 +1,13 @@
-name:                lecture8
+name:                lecture
 version:             0.1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/fpclass/lecture8#readme
+homepage:            https://github.com/fpclass/lecture-higher-order-cont#readme
 license:             MIT
 license-file:        LICENSE
 author:              Michael B. Gale
 maintainer:          m.gale@warwick.ac.uk
-copyright:           2020 Michael B. Gale
+copyright:           2021 Michael B. Gale
 category:            Web
 build-type:          Simple
 extra-source-files:  README.md
@@ -15,7 +15,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lecture8
+  exposed-modules:     Lecture
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 
@@ -29,4 +29,4 @@ executable picross
 
 source-repository head
   type:     git
-  location: https://github.com/fpclass/lecture8
+  location: https://github.com/fpclass/lecture-higher-order-cont
