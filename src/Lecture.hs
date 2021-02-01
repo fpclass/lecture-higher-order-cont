@@ -5,7 +5,7 @@
 
 module Lecture where
 
-import Prelude hiding ( and, product, length, foldr, foldl, (.) )
+import Prelude hiding ( and, product, length, foldl, (.) )
 
 --------------------------------------------------------------------------------
 -- folds (continued)
@@ -39,5 +39,18 @@ length'' = foldl (\n x -> n + 1) 0
 -- count
 
 -- count '3' "cs133" => 2
+-- count :: (Num r, Eq a) => a -> [a] -> r
+-- count _ [] = 0
+-- count y (x:xs)
+--     | y==x      = 1 + count y xs
+--     | otherwise =     count y xs
+
+-- count :: (Num r, Eq a) => a -> [a] -> r
+-- count y = foldr (\x r -> if y==x then 1+r else r) 0
+
+(.) :: (b -> c) -> (a -> b) -> a -> c
+(.) f g x = f (g x)
+
+count y = length . filter (==y)
 
 --------------------------------------------------------------------------------
